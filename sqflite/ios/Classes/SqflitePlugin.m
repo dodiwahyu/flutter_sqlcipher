@@ -130,8 +130,7 @@ static NSInteger _databaseOpenCount = 0;
     FlutterMethodChannel* channel =
     [[FlutterMethodChannel alloc] initWithName:_channelName
                                binaryMessenger:[registrar messenger]
-                                         codec:[FlutterStandardMethodCodec sharedInstance]
-                                     taskQueue:[registrar.messenger makeBackgroundTaskQueue]];
+                                         codec:[FlutterStandardMethodCodec sharedInstance]];
 #else
     FlutterMethodChannel* channel = [FlutterMethodChannel
                                      methodChannelWithName:_channelName
