@@ -23,7 +23,7 @@ void main() {
 /// Sqflite test app
 class MyApp extends StatefulWidget {
   /// test app.
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
   // This widget is the root of your application.
 
   @override
@@ -100,7 +100,7 @@ class _MyAppState extends State<MyApp> {
 /// App home menu page.
 class MyHomePage extends StatefulWidget {
   /// App home menu page.
-  MyHomePage({Key? key, this.title}) : super(key: key) {
+  MyHomePage({super.key, this.title}) {
     _items.add(
         MainItem('Raw tests', 'Raw SQLite operations', route: testRawRoute));
     _items.add(MainItem('Open tests', 'Open onCreate/onUpgrade/onDowngrade',

@@ -11,7 +11,8 @@ void main() {
     final log = <MethodCall>[];
     String? response;
 
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
       log.add(methodCall);
       return response;
     });

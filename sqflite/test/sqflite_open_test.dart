@@ -36,7 +36,8 @@ class MockScenario {
 MockScenario startScenario(List<List> data) {
   final scenario = MockScenario(data);
 
-  channel.setMockMethodCallHandler((MethodCall methodCall) async {
+  TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
     final index = scenario.index++;
     // devPrint('$index ${scenario.methodsCalls[index]}');
     final item = scenario.methodsCalls[index];
