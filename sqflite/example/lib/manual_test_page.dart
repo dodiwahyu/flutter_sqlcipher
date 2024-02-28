@@ -49,10 +49,6 @@ class _ManualTestPageState extends State<ManualTestPage> {
   late List<SqfMenuItem> items;
   late List<ItemWidget> itemWidgets;
 
-  Future<bool> pop() async {
-    return true;
-  }
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -184,8 +180,8 @@ class _ManualTestPageState extends State<ManualTestPage> {
       appBar: AppBar(
         title: const Text('Manual tests'),
       ),
-      body: WillPopScope(
-        onWillPop: pop,
+      body: PopScope(
+        canPop: true,
         child: ListView(
           children: itemWidgets,
         ),

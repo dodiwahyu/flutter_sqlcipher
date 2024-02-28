@@ -5,6 +5,7 @@ import 'package:dev_test/build_support.dart';
 import 'package:dev_test/src/run_ci.dart';
 import 'package:path/path.dart';
 import 'package:process_run/shell_run.dart';
+import 'package:tekartik_travis_ci_flutter/bin/install.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -117,7 +118,7 @@ void main() {
         await runCi();
       }
     }, timeout: const Timeout(Duration(minutes: 10)));
-  }, skip: !isFlutterSupportedSync && !isRunningOnTravis);
+  }, skip: !isFlutterSupportedSync && !runningOnTravis);
   // TODO @alex find a better to know the flutter build status
 
   group(

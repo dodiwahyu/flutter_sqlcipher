@@ -1,4 +1,4 @@
-// @dart = 2.9
+// @dart = 3.0
 //
 // This is to allow running this file without null experiment
 // In the future, remove this 2.9 command and run using: dart --enable-experiment=non-nullable --no-sound-null-safety run tool/travis.dart
@@ -33,7 +33,7 @@ flutter test
 
     if (travisDartChannel == 'stable') {
       if (codeCovToken != null) {
-        String bashFilePath;
+        String? bashFilePath;
         try {
           final dir = await Directory.systemTemp.createTemp('sqflite');
           bashFilePath = join(dir.path, 'codecov.bash');
